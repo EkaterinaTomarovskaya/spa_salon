@@ -1,0 +1,266 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+*{
+    text-decoration: none;
+}
+
+li{
+    text-decoration: none;
+    list-style: none;
+}
+
+
+@font-face {
+    font-family: "Evolventa";
+    font-style: normal;
+    font-weight: 400;
+    /* Браузер сначала попробует найти шрифт локально */
+    src: local("Evolventa"),
+         /* Если не получилось, загрузит woff2 */
+         url("/fonts/Evolventa-Regular.woff") format("woff2"),
+         /* Если браузер не поддерживает woff2, загрузит woff */
+         url("/fonts/Evolventa-Regular.woff") format("woff");
+  }
+  
+  /* Теперь можно использовать шрифт */
+
+@font-face {
+    font-family: "Gilroy";
+    font-style: light;
+    font-weight: 400;
+    /* Браузер сначала попробует найти шрифт локально */
+    src: local("Gilroy"),
+         /* Если не получилось, загрузит woff2 */
+         url("/fonts/Gilroy-Light.otf") format("otf"),
+         /* Если браузер не поддерживает woff2, загрузит woff */
+         url("/fonts/Gilroy-Light.otf") format("woff");
+}
+  
+  /* Теперь можно использовать шрифт */
+body {
+    font-family: "Evolventa", "Evolventa", sans-serif;
+    font-family: "Gilroy", "Gilroy", sans-serif;
+}
+
+.logo {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column; /* Чтобы элементы располагались вертикально */
+    align-items: center;    /* Центрируем по горизонтали */
+    justify-content: center;/* Центрируем по вертикали */
+    position: relative;       /* Это важно для позиционирования элементов внутри */
+
+}
+
+.graficlogo{
+    padding: 20px;
+    width: 100%;              /* Логотип занимает всю ширину контейнера */
+    max-width: 380px;         /* Ограничиваем максимальный размер логотипа */
+    box-sizing: border-box; /*изменяет алгоритмы расчета ширины и высоты элемента*/
+}
+
+
+.navigation_title_main_first {
+    font-size: 40px;
+    justify-content: center;
+    color: #000000;
+    font-family: "Gilroy";
+    line-height: 1.2;
+    text-align: center;  /* Выравниваем текст по центру */
+    width: 100%;         /* Логотип занимает всю ширину контейнера */
+    display: flex;
+    justify-content: center; /* Центрируем текст внутри блока */
+    position: absolute;      /* Позволяет элементу располагаться поверх */
+    top: 50%;                /* Центрируем по вертикали */
+    left: 50%;               /* Центрируем по горизонтали */
+    transform: translate(-50%, -50%); /* Точное центрирование */
+    text-decoration: none; /* Убираем подчеркивание */
+
+}
+
+.graficnavigation_title_main_first{
+    font-size: 40px;
+    color: #000000;
+    text-decoration: none; /* Убираем подчеркивание */
+    font-family: "Gilroy";
+    padding: 40px;
+    display: inline-block;
+    white-space: nowrap;    /* Запрещаем перенос текста */
+    width: auto;            /* Даем блоку только необходимую ширину */
+}
+
+/* Сброс изменения цвета при наведении */
+.graficnavigation_title_main_first:hover {
+    color: #000000; /* Цвет текста при наведении */
+    text-decoration: none; /* Убираем подчеркивание при наведении */
+}
+
+
+.navigation {
+    justify-content: space-between;
+    display: flex; /* Располагаем элементы в ряд */
+    align-items: center;         /* Центровка элементов по вертикали */
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0 0px;            /* Отступы внутри навигации */
+}
+
+.navigation_list {
+    display: flex;
+    gap: 23px;
+    list-style: none;
+    transform: translateX(32px); /* Двигаем текст влево */
+
+}
+
+.navigation_title_main {
+    text-decoration: none;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 32px;
+    font-family: "Gilroy";
+    list-style: none;
+}
+
+
+.container_button_header {
+    width: 150px;
+    /* Ширина кнопки */
+    height: 60px;
+    /* Высота кнопки */
+    font-size: 16px;
+    background-color: #000000;
+    /* Цвет кнопки */
+    color: #ffffff;
+    /* Цвет текста */
+    border: none;
+    cursor: pointer;
+    border-radius: 40px;
+    /* Закругленные углы */
+    font-family: "Gilroy";
+    margin-left: 1000px; /* Прижатие кнопки к правому краю */
+
+}
+
+/* Эффект наведения */
+.container_button_header:hover {
+    background: transparent; /* Прозрачный фон */
+    color: #000000; /* черный цвет текста при наведении */
+    border: 2px solid #000000; /* Черная граница */
+
+}
+
+.image_container {
+    max-width: 100%;
+    justify-content: flex-start;
+    margin-left: 0px; /* Прижимаем картинку к левому краю с отступом 32px */
+    margin-right: 1000px;
+    margin-top: 50px;
+}
+
+.container_page_header {
+    display: flex;
+    gap: 10px;
+    padding: 25px 32px 0;
+    align-items: center;
+    flex-direction: row-reverse; /* Меняем порядок: текст справа, картинка слева */
+    margin-top: 150px;
+
+}
+
+.text_header_list {
+    list-style: none; /* убираем нумирацию списка*/
+    flex-direction: column; /* Вертикальная организация текста и кнопок */
+    justify-content: center; /* Центрирование по правой стороне */
+    align-items: center; /* Центровка элементов по горизонтали */
+    transform: translateX(300px); /* Двигаем текст влево */
+    margin-top: -1250px;
+}
+
+.text_header {
+    font-size: 70px;
+    font-style: normal;
+    line-height: 120%;
+    transform: translateX(140px); /* Двигаем текст влево */
+    text-align: center; /* Центровка текста внутри элементов */
+    margin-top: -37px;
+    line-height: 120%;
+    font-family: "Evolventa";
+}
+
+.text_header_small {
+    font-size: 40px;
+    margin-right: 65px;
+    line-height: 120%;
+    transform: translateX(170px); /* Двигаем текст влево */
+    margin-top: 40px;
+    font-family: "Gilroy";
+}
+
+.container_button_page_header {
+    width: 210px;
+    /* Ширина кнопки */
+    height: 72px;
+    /* Высота кнопки */
+    font-size: 20px;
+    background-color: #000000;
+    /* Цвет кнопки */
+    color: #ffffff;
+    /* Цвет текста */
+    cursor: pointer;
+    border-radius: 40px;
+    /* Закругленные углы */
+    transform: translateX(300px); /* Двигаем текст влево */
+    margin-top: 40px;
+    font-family: "Gilroy";
+}
+
+/* Эффект наведения */
+.container_button_page_header:hover {
+    background: transparent; /* Прозрачный фон */
+    color: #000000; /* Белый цвет текста при наведении */
+}
+
+
+.container_button_page_header_two {
+    width: 210px; /* Ширина кнопки */
+    height: 70px; /* Высота кнопки */
+    font-size: 20px; /* Размер шрифта */
+    background: transparent; /* Прозрачный фон */
+    color: #000000; /* Цвет текста */
+    border: 2px solid #000000; /* Черная граница */
+    cursor: pointer; /* Курсор в виде руки */
+    border-radius: 40px; /* Закругленные углы */
+    transform: translateX(575px); /* Двигаем текст влево */
+    transition: background-color 0.3s, color 0.3s; /* Плавные переходы для фона и текста */
+    margin-top: 0; /* Убираем отступ сверху */
+    position: absolute; /* Устанавливаем абсолютное позиционирование */
+    top: 390px; /* Устанавливаем верхнее положение кнопки */
+    font-family: "Gilroy";
+}
+
+/* Эффект наведения */
+.container_button_page_header_two:hover {
+    background-color: #000000; /* Фон при наведении */
+    color: #ffffff; /* Белый цвет текста при наведении */
+}
+
+
+.image_small_header_left, .image_small_header_right {
+    position: absolute;  /* Относительно ближайшего родителя с position: relative */
+    top: 0;              /* Отступ от верхней части родителя */
+}
+
+.image_small_header_left {
+    left: 90px;         /* Расположение от левого края */
+    margin-top: 135px;  /* Поднимем картинку на 250px */
+}
+
+.image_small_header_right {
+    right: -210px;            /* Расположение от правого края */
+    margin-top: -32px;  /* Поднимем картинку на 250px */
+}
