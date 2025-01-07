@@ -1,9 +1,6 @@
 * {
     padding: 0;
     margin: 0;
-}
-
-*{
     text-decoration: none;
 }
 
@@ -11,7 +8,6 @@ li{
     text-decoration: none;
     list-style: none;
 }
-
 
 @font-face {
     font-family: "Evolventa";
@@ -46,33 +42,36 @@ body {
     font-family: "Gilroy", "Gilroy", sans-serif;
 }
 
+/* Header и Логотип */
 header {
     display: flex; /* Flexbox для выравнивания элементов */
     padding: 10px 50px; /* Отступы для визуального разделения */
+    justify-content: space-between;  /* Равномерное распределение элементов */
+    align-items: center;
+    
 }
 
 .logo {
     display: flex;
+    width: 100%;
     flex-direction: column; /* Чтобы элементы располагались вертикально */
     align-items: center;    /* Центрируем по горизонтали */
     justify-content: center;/* Центрируем по вертикали */
-    position: relative;       /* Это важно для позиционирования элементов внутри */
-
+    position: relative;     /* Это важно для позиционирования элементов внутри */
 }
 
-.graficlogo{
+.graficlogo {
     padding: 20px;
-    max-width: 380px;         /* Ограничиваем максимальный размер логотипа */
-    box-sizing: border-box; /*изменяет алгоритмы расчета ширины и высоты элемента*/
+    max-width: 360px; 
+    width: 100%; /* Заставляем логотип растягиваться по ширине родителя */
+    box-sizing: border-box; /* Изменяет алгоритмы расчета ширины и высоты элемента */
 }
-
 
 .navigation_title_main_first {
-    font-family: "Evolventa";
-    font-size: 40px;
-    justify-content: center;
-    color: #000000;
     font-family: "Gilroy";
+    width: 100%;
+    font-size: 4vw; /* Размер текста зависит от ширины окна */
+    color: #000000;
     line-height: 1.2;
     text-align: center;  /* Выравниваем текст по центру */
     display: flex;
@@ -82,18 +81,17 @@ header {
     left: 50%;               /* Центрируем по горизонтали */
     transform: translate(-50%, -50%); /* Точное центрирование */
     text-decoration: none; /* Убираем подчеркивание */
-
 }
 
 .graficnavigation_title_main_first{
     font-size: 45px;
     color: #000000;
     text-decoration: none; /* Убираем подчеркивание */
-    font-family: "Gilroy";
     padding: 40px;
     white-space: nowrap;    /* Запрещаем перенос текста */
     box-sizing: border-box; /*изменяет алгоритмы расчета ширины и высоты элемента*/
-
+    max-width: 360px; 
+    width: 100%; /* Заставляем логотип растягиваться по ширине родителя */
 }
 
 .graficnavigation_title_main_first:hover {
@@ -101,45 +99,49 @@ header {
     text-decoration: none; /* Убираем подчеркивание при наведении */
 }
 
+/* Навигация */
 nav{
-    margin: auto;
-    width: 1868px;
-    height: 100px;
+    height: 50px;
     font-family: "Gilroy";
-    margin-top: -90px;
     display: flex; /* Flexbox для расположения кнопки и навигации */
     align-items: center; /* Вертикальное выравнивание */
-    text-decoration: none; /* Убираем подчеркивание */
-
+    margin-left: -25px; /* Сдвигаем меню и кнопку на 30px влево */
+    top: 40px;
 }
 
 nav:hover {
-    color: #000000; /* Цвет текста при наведении */
-    
+    color: #000000; /* Цвет текста при наведении */ 
 }
 
 .topnav{
     background-color: #ffffff;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;    /* Запрещаем перенос текста */
+    margin-left: 30px;
+    margin-top: -30px;
+
 }
 
 .topnav a{
     color: #000000;
     text-align: left;
-    padding: 16px 16px;
+    padding: 16px 18px;
     font-size: 22px;
     text-decoration: none; /* Убираем подчеркивание */
-
+    top: 40px;
 }
 
 .topnav a:hover {
     border-bottom: 2px solid #000000; /* Подчеркивание черным цветом при наведении */
     color: #000000; /* Цвет текста остается черным при наведении */
     text-decoration: none; /* Убираем подчеркивание, если оно появляется при наведении */
-
 }
 
 .topnav .icon{
     display: none;
+
 }
 
 /* Медиазапрос для экранов шириной до 768px */
@@ -175,6 +177,40 @@ nav:hover {
     }
 }
 
+
+@media screen and (max-width:768px) {
+    /* Скрываем ссылки, кроме первой */
+    .navigation_title_main_first a:not(:first-child) {
+        font-size: 8vw;  /* Увеличиваем текст для планшетов */
+    }
+    /* Иконка меню отображается */
+    .topnav a.icon{
+        float: right;
+        margin-top: -17px;
+        display: block;
+        color: black;
+    }
+    /* Обновляем навигацию на мобильных устройствах */
+    nav{
+        width: 100%;
+        height: 100px;
+    }
+    .topnav.responsive{
+        position: relative;
+    }
+    .topnav.responsive a.icon{
+        position: absolute;
+        right: 0;
+        left: 0;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
+/* Кнопка "Войти" */
 .container_button_header {
     width: 150px;
     /* Ширина кнопки */
@@ -190,7 +226,9 @@ nav:hover {
     border-radius: 40px;
     /* Закругленные углы */
     font-family: "Gilroy";
-    margin-left: 1032px; /* Прижатие кнопки к правому краю */
+    position: absolute;
+    right: 40px;
+    transition: background-color 0.3s, color 0.3s;
 
 }
 
@@ -202,139 +240,148 @@ nav:hover {
 
 }
 
+@media screen and (max-width: 768px) {
+    .container_button_header {
+        width: 120px;
+        height: 50px;
+        font-size: 14px;
+        right: 20px;
+        top: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container_button_header {
+        width: 100px;
+        height: 45px;
+        font-size: 12px;
+        right: 15px;
+        top: 10px;
+    }
+}
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.main_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding: 50px 5%;
+    flex-wrap: wrap;
+}
 
 .image_container {
-    max-width: 100%;
-    justify-content: flex-start;
-    margin-left: 0px; /* Прижимаем картинку к левому краю с отступом 32px */
-    margin-right: 1000px;
-    margin-top: 50px;
+    max-width: 50%;
+    height: auto;
+    flex-shrink: 0;
+    margin-left: -30px;
 }
 
-.container_page_header {
-    display: flex;
-    gap: 10px;
-    padding: 25px 32px 0;
-    align-items: center;
-    flex-direction: row-reverse; /* Меняем порядок: текст справа, картинка слева */
-    margin-top: 150px;
-
-}
-
-.text_header_list {
-    list-style: none; /* убираем нумирацию списка*/
-    flex-direction: column; /* Вертикальная организация текста и кнопок */
-    justify-content: center; /* Центрирование по правой стороне */
-    align-items: center; /* Центровка элементов по горизонтали */
-    transform: translateX(300px); /* Двигаем текст влево */
-    margin-top: -1250px;
+.text_section {
+    max-width: 45%;
+    text-align: center;
 }
 
 .text_header {
-    font-size: 70px;
-    font-style: normal;
-    line-height: 120%;
-    transform: translateX(140px); /* Двигаем текст влево */
-    text-align: center; /* Центровка текста внутри элементов */
-    margin-top: -37px;
-    line-height: 120%;
+    font-size: 3.5vw;
+    line-height: 1.2;
+    margin-bottom: 20px;
     font-family: "Evolventa";
 }
 
 .text_header_small {
-    font-size: 40px;
-    margin-right: 65px;
-    line-height: 120%;
-    transform: translateX(170px); /* Двигаем текст влево */
-    margin-top: 40px;
+    font-size: 2vw;
+    margin-bottom: 30px;
     font-family: "Gilroy";
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.container_button_page_header,
+.container_button_page_header_two {
+    width: 210px;
+    height: 70px;
+    font-size: 20px;
+    border-radius: 40px;
+    font-family: "Gilroy";
+    cursor: pointer;
 }
 
 .container_button_page_header {
-    width: 210px;
-    /* Ширина кнопки */
-    height: 72px;
-    /* Высота кнопки */
-    font-size: 20px;
-    background-color: #000000;
-    /* Цвет кнопки */
-    color: #ffffff;
-    /* Цвет текста */
-    cursor: pointer;
-    border-radius: 40px;
-    /* Закругленные углы */
-    transform: translateX(300px); /* Двигаем текст влево */
-    margin-top: 40px;
-    font-family: "Gilroy";
+    background-color: #000;
+    color: #fff;
+    border: none;
 }
-
-/* Эффект наведения */
-.container_button_page_header:hover {
-    background: transparent; /* Прозрачный фон */
-    color: #000000; /* Белый цвет текста при наведении */
-}
-
 
 .container_button_page_header_two {
-    width: 210px; /* Ширина кнопки */
-    height: 70px; /* Высота кнопки */
-    font-size: 20px; /* Размер шрифта */
-    background: transparent; /* Прозрачный фон */
-    color: #000000; /* Цвет текста */
-    border: 2px solid #000000; /* Черная граница */
-    cursor: pointer; /* Курсор в виде руки */
-    border-radius: 40px; /* Закругленные углы */
-    transform: translateX(575px); /* Двигаем текст влево */
-    transition: background-color 0.3s, color 0.3s; /* Плавные переходы для фона и текста */
-    margin-top: 0; /* Убираем отступ сверху */
-    position: absolute; /* Устанавливаем абсолютное позиционирование */
-    top: 390px; /* Устанавливаем верхнее положение кнопки */
-    font-family: "Gilroy";
+    background: transparent;
+    color: #000;
+    border: 2px solid #000;
 }
 
-/* Эффект наведения */
+.container_button_page_header:hover {
+    background: transparent;
+    color: #000;
+    border: 2px solid #000;
+}
+
 .container_button_page_header_two:hover {
-    background-color: #000000; /* Фон при наведении */
-    color: #ffffff; /* Белый цвет текста при наведении */
+    background-color: #000;
+    color: #fff;
 }
 
-
-.image_small_header_left, .image_small_header_right {
-    position: absolute;  /* Относительно ближайшего родителя с position: relative */
-    top: 0;              /* Отступ от верхней части родителя */
+.small_images {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
 }
 
-.image_small_header_left {
-    left: 90px;         /* Расположение от левого края */
-    margin-top: 135px;  /* Поднимем картинку на 250px */
-}
-
+.image_small_header_left,
 .image_small_header_right {
-    right: -210px;            /* Расположение от правого края */
-    margin-top: -32px;  /* Поднимем картинку на 250px */
+    width: 130px;
+    height: auto;
+}
+
+/* Адаптивность */
+@media screen and (max-width: 768px) {
+    .main_content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image_container {
+        max-width: 90%;
+        margin-bottom: 30px;
+    }
+
+    .text_section {
+        max-width: 100%;
+    }
+
+    .text_header {
+        font-size: 6vw;
+    }
+
+    .text_header_small {
+        font-size: 3vw;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container_button_page_header,
+    .container_button_page_header_two {
+        width: 80%;
+        max-width: 300px;
+    }
 }
